@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--body container-->
+<body onload="completeCount()">
+    <section >
+        
+        </section>
+    <section class="todo_container">
+        <div class="heading">
+            <h1 class="heading-title">My TODO List</h1>
+        </div>
+        <div><span style="color:rgb(92, 36, 184)">Completed/Total:</span> <span class="completed-count">0 / 0</span> items</div>
+        <!--todo container-->
+        <section class="todo__add">
+            <div class="task_title-wrap" id="add_task_title">
+
+                <label for="add_new_task" class="section__title section__title--add">Add Item</label>
+            </div>
+            <!--Input box where inetr your task-->
+            <input id="add_new_task" class="input_text new_task_input" type="text" placeholder="Enter Your Task Here" required>
+            <!--This is add button-->
+            <button id="add_task_button" class="button"><i class="material-icons icon__add">add_circle</i></button>
+        </section>
+        <!-- This is only for task incompletion-->
+        <section class="todo__list">
+            <!--Thisis for heading for incompletion-->
+            <div class="task_title_wrap task_title" id="your_task">
+                <h3 class="section__title">Your Todo Item</h3>
+            </div>
+            <!--This is incompletion listitem store-->
+            <ul id="your_incomplete_task" class="list">
+            </ul>
+        </section>
+        <!-- This section is only for compltion task-->
+        <section class="task_complete">
+            <!-- This is task completion heading -->
+            <div class="task_title_wrap" id="completed">
+                <h3 class="section__title">Completed Task Items</h3>
+            </div>
+            <!-- This is list item of completion task-->
+            <ul id="your_completed-tasks" class="list">
+            </ul>
+        </section>
+    </section>
+    <script src="to-do.js"></script>
+    <script type="text/javascript">
+    function createBubble(){
+        const section=document.querySelector('section');
+        const createElement=document.createElement('span');
+        createElement.className="span1";
+        var size=Math.random()*60;
+        createElement.style.width=20+size+'px';
+        createElement.style.height=20+size+'px';
+        createElement.style.left=Math.random()*innerWidth+'px';
+        section.appendChild(createElement);
+        setTimeout(()=>{
+        createElement.remove()},3000)
+        }
+        setInterval(createBubble,50)
+    </script>
+</body>
+
+</html>
